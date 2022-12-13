@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Task {
     private int id;
-    private int idDescription;
+    private int idProject;
     private String notes;
     private String name;
     private String description;
@@ -15,7 +15,7 @@ public class Task {
 
     public Task(int id, int idDescription, String notes, String name, String description, boolean statusTask, Date deadLine, Date uptadeAt, Date createAt) {
         this.id = id;
-        this.idDescription = idDescription;
+        this.idProject = idDescription;
         this.notes = notes;
         this.name = name;
         this.description = description;
@@ -23,6 +23,10 @@ public class Task {
         this.deadLine = deadLine;
         this.uptadeAt = uptadeAt;
         this.createAt = createAt;
+    }
+
+    public Task(){
+        this.createAt = new Date();
     }
 
     public int getId() {
@@ -33,12 +37,12 @@ public class Task {
         this.id = id;
     }
 
-    public int getIdDescription() {
-        return idDescription;
+    public int getIdProject() {
+        return idProject;
     }
 
-    public void setIdDescription(int idDescription) {
-        this.idDescription = idDescription;
+    public void setIdProject(int idProject) {
+        this.idProject = idProject;
     }
 
     public String getNotes() {
@@ -101,7 +105,7 @@ public class Task {
     public String toString() {
         return "Task{" +
                 "id=" + id +
-                ", idDescription=" + idDescription +
+                ", idDescription=" + idProject +
                 ", notes='" + notes + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
