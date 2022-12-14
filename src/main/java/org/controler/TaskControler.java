@@ -3,10 +3,8 @@ package org.controler;
 import org.Util.ConnectionFactory;
 import org.model.Task;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class TaskControler {
@@ -18,7 +16,7 @@ public class TaskControler {
                 "statusTask," +
                 "notes," +
                 "deadLine," +
-                "creatAt," +
+                "createAt," +
                 "updateAt) VALUES (?,?,?,?,?,?,?,?)";
 
         Connection conn = null;
@@ -37,7 +35,7 @@ public class TaskControler {
             statement.setDate(8, new Date(task.getUptadeAt().getTime()));
             statement.execute();
         } catch (Exception ex) {
-            throw new RuntimeException("Erro ao salvar a tarefa"+ex.getMessage(), ex);
+            throw new RuntimeException("Erro ao salvar a tarefa "+ex.getMessage(), ex);
         }finally {
             ConnectionFactory.closeConnection(conn, statement);
 
@@ -53,7 +51,7 @@ public class TaskControler {
                 "statusTask= ?," +
                 "notes= ?," +
                 "deadLine= ?," +
-                "creatAt = ?," +
+                "createAt = ?," +
                 "updateAt= ? WHERE id = ?";
 
         Connection conn = null;
@@ -99,7 +97,48 @@ public class TaskControler {
     }
 
     public List<Task> getAll(int idProject){
-        return null;
+
+        String sql = "SELECT * FROM task WHERE idProject=?";
+
+        Connection conn = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        //Lista de tarefa que vai ser devolvida quando chamar o metodo getall
+        List <Task> tasks = new ArrayList<Task>();
+
+        try {
+            conn = ConnectionFactory.getConnection();
+            statement = conn.prepareStatement(sql);
+            statement.setInt(1, idProject);
+            resultSet = statement.executeQuery();
+
+            while(resultSet.next()){
+                Task task = new Task();
+                task.setId(resultSet.getInt("id"));
+                task.setIdProject(resultSet.getInt("idProject"));
+                task.setName(resultSet.getString("name"));
+                task.setDescription(resultSet.getString("description"));
+                task.setNotes(resultSet.getString("notes"));
+                task.setStatusTask(resultSet.getBoolean("statusTask"));
+                task.setDeadLine(resultSet.getDate("deadLine"));
+                task.setCreateAt(resultSet.getDate("createAt"));
+                task.setUptadeAt(resultSet.getDate("uptadeAt"));
+
+                tasks.add(task);
+
+
+
+            }
+
+        } catch (Exception ex) {
+            throw new  RuntimeException("Erro ao autalizar o banco de dados"+ ex.getMessage(), ex);
+        }finally {
+            ConnectionFactory.closeConnection(conn, statement, resultSet);
+        }
+
+        //Lista que foi criada e vai ser devolvida já carregada
+        return tasks;
     }
 
 

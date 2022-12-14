@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bef5023b-978a-41e0-bebe-6e253d208642" name="Changes" comment="Criando conexão com o banco de dados usando driver menager e o Sql connection">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/controler/TaskControler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_12_2022_22_19__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_12_2022_22_19__Changes_.xml" afterDir="false" />
+    <list default="true" id="bef5023b-978a-41e0-bebe-6e253d208642" name="Changes" comment="Criando controladores.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/Util/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Util/ConnectionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/model/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/controler/TaskControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/controler/TaskControler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670894617267</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Criando controladores.">
+      <created>1670957944008</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1670957944008</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -228,6 +233,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Arquivo com parte inical do projeto" />
     <MESSAGE value="Criando conexão com o banco de dados usando driver menager e o Sql connection" />
-    <option name="LAST_COMMIT_MESSAGE" value="Criando conexão com o banco de dados usando driver menager e o Sql connection" />
+    <MESSAGE value="Criando controladores." />
+    <option name="LAST_COMMIT_MESSAGE" value="Criando controladores." />
   </component>
 </project>
