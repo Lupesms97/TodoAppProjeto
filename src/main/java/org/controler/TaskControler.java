@@ -4,6 +4,7 @@ import org.Util.ConnectionFactory;
 import org.model.Task;
 
 import java.sql.*;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -127,7 +128,7 @@ public class TaskControler {
                 task.setStatusTask(resultSet.getBoolean("statusTask"));
                 task.setDeadLine(resultSet.getDate("deadLine"));
                 task.setCreateAt(resultSet.getDate("createAt"));
-                task.setUpdateAt(resultSet.getDate("uptadeAt"));
+                task.setUpdateAt(resultSet.getDate("updateAt"));
 
                 tasks.add(task);
 
@@ -136,7 +137,7 @@ public class TaskControler {
             }
 
         } catch (Exception ex) {
-            throw new  RuntimeException("Erro ao autalizar o banco de dados"+ ex.getMessage(), ex);
+            throw new  RuntimeException("Erro ao buscar as informações"+ ex.getMessage(), ex);
         }finally {
             ConnectionFactory.closeConnection(conn, statement, resultSet);
         }

@@ -1,20 +1,20 @@
 package org.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Project {
     private int id;
     private String name;
     private String description;
-    private Date uptadeAt;
+    private Date updateAt;
     private Date createAt;
 
 
-    public Project(int id, String name, String description, Date uptadeAt, Date createAt) {
+    public Project(int id, String name, String description, Date updateAt, Date createAt) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.uptadeAt = uptadeAt;
+        this.updateAt = updateAt;
         this.createAt = createAt;
     }
 
@@ -47,11 +47,11 @@ public class Project {
     }
 
     public Date getUpdateAt() {
-        return uptadeAt;
+        return updateAt;
     }
 
-    public void setUpdateAt(Date uptadeAt) {
-        this.uptadeAt = uptadeAt;
+    public void setUpdateAt(Date updateAt) {
+        this.updateAt = updateAt;
     }
 
     public Date getCreateAt() {
@@ -68,7 +68,7 @@ public class Project {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", uptadeAt=" + uptadeAt +
+                ", uptadeAt=" + updateAt +
                 ", createAt=" + createAt +
                 '}';
     }

@@ -10,10 +10,10 @@ public class Task {
     private String description;
     private boolean statusTask;
     private Date deadLine;
-    private Date uptadeAt;
+    private Date updateAt;
     private Date createAt;
 
-    public Task(int id, int idDescription, String notes, String name, String description, boolean statusTask, Date deadLine, Date uptadeAt, Date createAt) {
+    public Task(int id, int idDescription, String notes, String name, String description, boolean statusTask, Date deadLine, Date updateAt, Date createAt) {
         this.id = id;
         this.idProject = idDescription;
         this.notes = notes;
@@ -21,7 +21,7 @@ public class Task {
         this.description = description;
         this.statusTask = statusTask;
         this.deadLine = deadLine;
-        this.uptadeAt = uptadeAt;
+        this.updateAt = updateAt;
         this.createAt = createAt;
     }
 
@@ -86,11 +86,11 @@ public class Task {
     }
 
     public Date getUpdateAt() {
-        return uptadeAt;
+        return updateAt;
     }
 
     public void setUpdateAt(Date uptadeAt) {
-        this.uptadeAt = uptadeAt;
+        this.updateAt = uptadeAt;
     }
 
     public Date getCreateAt() {
@@ -111,7 +111,7 @@ public class Task {
                 ", description='" + description + '\'' +
                 ", statusTask=" + statusTask +
                 ", deadLine=" + deadLine +
-                ", uptadeAt=" + uptadeAt +
+                ", uptadeAt=" + updateAt +
                 ", createAt=" + createAt +
                 '}';
     }

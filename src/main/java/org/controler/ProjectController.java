@@ -3,18 +3,18 @@ package org.controler;
 import org.Util.ConnectionFactory;
 import org.model.Project;
 
-import java.sql.*;
+import java.lang.*;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProjectController {
-    //save
-    //removebyId
-    //update
-    //getall
 
-    public void save(Project project){
-        String sql = "INSERT INTO project (name," +
+    public static void save(Project project) throws RuntimeException {
+        String sql = "INSERT INTO projects (name," +
                 "description," +
                 "createAt," +
                 "UpdateAt VALUES(?, ?, ?, ?)";
@@ -27,12 +27,12 @@ public class ProjectController {
             statement = conn.prepareStatement(sql);
             statement.setString(1, project.getName());
             statement.setString(2, project.getDescription());
-            statement.setDate(3, new Date(project.getCreateAt().getTime()));
-            statement.setDate(4, new Date(project.getUpdateAt().getTime()));
+            statement.setDate(3, new Date((project.getCreateAt()).getTime()));
+            statement.setDate(4, new Date((project.getUpdateAt()).getTime()));
             statement.execute();
 
         } catch (Exception ex) {
-            throw new RuntimeException("Erro ao salvar as inormações no banco de dados "+ ex.getMessage(), ex);
+            throw new RuntimeException("Erro ao salvar as inormações no banco de dados "+ ex.getMessage());
         }finally {
             ConnectionFactory.closeConnection(conn, statement);
 
@@ -41,11 +41,12 @@ public class ProjectController {
 
     }
 
-    public void update(Project project, Object projectName){
-        String sql = "UPDATE project SET(name," +
-        "description," +
-        "createAt," +
-        "UpdateAt VALUES(?, ?, ?, ?)";
+    public static void update(Project project){
+
+        String sql = "UPDATE projects SET(name=?," +
+        "description=?," +
+        "createAt=?," +
+        "UpdateAt=? WHERE id=?";
 
         Connection conn= null;
         PreparedStatement statement = null;
@@ -57,6 +58,7 @@ public class ProjectController {
             statement.setString(2, project.getDescription());
             statement.setDate(3, new Date(project.getCreateAt().getTime()));
             statement.setDate(4, new Date(project.getUpdateAt().getTime()));
+            statement.setInt(5, project.getId());
             statement.execute();
 
 
@@ -65,8 +67,8 @@ public class ProjectController {
         }
     }
 
-    public void removeByName(String projectName){
-        String sql = "DELETE FROM project WHERE name=?";
+    public void removeById(int idProject){
+        String sql = "DELETE FROM projects WHERE id=?";
 
         Connection conn = null;
         PreparedStatement statement = null;
@@ -74,10 +76,10 @@ public class ProjectController {
         try {
             conn = ConnectionFactory.getConnection();
             statement = conn.prepareStatement(sql);
-            statement.setString(1, projectName);
+            statement.setInt(1, idProject);
             statement.execute();
         } catch (Exception ex) {
-            throw new RuntimeException("Erro ao apagar as informações do projeto " +projectName+" ."+ ex.getMessage(), ex);
+            throw new RuntimeException("Erro ao apagar as informações do projeto"+ ex.getMessage(), ex);
         }finally {
             ConnectionFactory.closeConnection(conn, statement);
 
@@ -86,9 +88,9 @@ public class ProjectController {
     }
 
 
-    public List<Project> getAll(String nameProject){
+    public List<Project> getAll(){
 
-        String sql = "SELECT * FROM project WHERE name=?";
+        String sql = "SELECT * FROM projects";
 
         Connection conn = null;
         PreparedStatement statement = null;
@@ -99,7 +101,6 @@ public class ProjectController {
         try {
             conn = ConnectionFactory.getConnection();
             statement = conn.prepareStatement(sql);
-            statement.setString(1, nameProject);
             resultSet = statement.executeQuery();
 
             while(resultSet.next()){
@@ -114,8 +115,11 @@ public class ProjectController {
                 projects.add(project);
 
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        } catch (Exception ex) {
+            throw new RuntimeException("Erro ao buscar as informações  do projeto "+ ex.getMessage(), ex);
+        }finally {
+            ConnectionFactory.closeConnection(conn, statement, resultSet);
+
         }
 
 

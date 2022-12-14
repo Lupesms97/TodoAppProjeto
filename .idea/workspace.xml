@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bef5023b-978a-41e0-bebe-6e253d208642" name="Changes" comment="COMENTANDO CODDIGO">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/controler/ProjectController.java" afterDir="false" />
+    <list default="true" id="bef5023b-978a-41e0-bebe-6e253d208642" name="Changes" comment="REFATORANDO OS GETS E SET DE UPDATE">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/play/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/Util/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Util/ConnectionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/controler/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/controler/ProjectController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/controler/TaskControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/controler/TaskControler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/model/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/model/Project.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/model/Task.java" afterDir="false" />
     </list>
@@ -77,7 +80,20 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.TodoAppProjeto [dependencies]">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.play.Main" />
+      <module name="TodoAppProjeto.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.play.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TodoAppProjeto [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -122,6 +138,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Gradle.TodoAppProjeto [dependencies]" />
         <item itemvalue="Gradle.TodoAppProjeto [test]" />
       </list>
@@ -220,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671030219606</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="REFATORANDO OS GETS E SET DE UPDATE">
+      <created>1671033936996</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1671033936996</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -252,6 +276,17 @@
     <MESSAGE value="Criando controladores." />
     <MESSAGE value="adicionando controlador que vai retornar lista e que carrega essta lista" />
     <MESSAGE value="COMENTANDO CODDIGO" />
-    <option name="LAST_COMMIT_MESSAGE" value="COMENTANDO CODDIGO" />
+    <MESSAGE value="REFATORANDO OS GETS E SET DE UPDATE" />
+    <option name="LAST_COMMIT_MESSAGE" value="REFATORANDO OS GETS E SET DE UPDATE" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint suspend="THREAD" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
