@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bef5023b-978a-41e0-bebe-6e253d208642" name="Changes" comment="adicionando controlador que vai retornar lista e que carrega essta lista">
+    <list default="true" id="bef5023b-978a-41e0-bebe-6e253d208642" name="Changes" comment="COMENTANDO CODDIGO">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/controler/ProjectController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/Util/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Util/ConnectionFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/controler/TaskControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/controler/TaskControler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/model/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/model/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/model/Task.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671029718248</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="COMENTANDO CODDIGO">
+      <created>1671030219606</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1671030219606</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -242,6 +251,7 @@
     <MESSAGE value="Criando conexão com o banco de dados usando driver menager e o Sql connection" />
     <MESSAGE value="Criando controladores." />
     <MESSAGE value="adicionando controlador que vai retornar lista e que carrega essta lista" />
-    <option name="LAST_COMMIT_MESSAGE" value="adicionando controlador que vai retornar lista e que carrega essta lista" />
+    <MESSAGE value="COMENTANDO CODDIGO" />
+    <option name="LAST_COMMIT_MESSAGE" value="COMENTANDO CODDIGO" />
   </component>
 </project>

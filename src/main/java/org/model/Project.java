@@ -18,6 +18,10 @@ public class Project {
         this.createAt = createAt;
     }
 
+    public Project() {
+
+    }
+
     public int getId() {
         return id;
     }
@@ -42,11 +46,11 @@ public class Project {
         this.description = description;
     }
 
-    public Date getUptadeAt() {
+    public Date getUpdateAt() {
         return uptadeAt;
     }
 
-    public void setUptadeAt(Date uptadeAt) {
+    public void setUpdateAt(Date uptadeAt) {
         this.uptadeAt = uptadeAt;
     }
 

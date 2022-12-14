@@ -32,7 +32,7 @@ public class TaskControler {
             statement.setString(5, task.getNotes());
             statement.setDate(6, new Date(task.getDeadLine().getTime()));
             statement.setDate(7, new Date(task.getCreateAt().getTime()));
-            statement.setDate(8, new Date(task.getUptadeAt().getTime()));
+            statement.setDate(8, new Date(task.getUpdateAt().getTime()));
             statement.execute();
         } catch (Exception ex) {
             throw new RuntimeException("Erro ao salvar a tarefa "+ex.getMessage(), ex);
@@ -45,7 +45,7 @@ public class TaskControler {
     }
 
     public void update(Task task){
-        String sql = "UPDATE task SET(idProject" +
+        String sql = "UPDATE task SET(idProject," +
                 "name = ?," +
                 "description= ?," +
                 "statusTask= ?," +
@@ -68,7 +68,7 @@ public class TaskControler {
             statement.setString(5, task.getNotes());
             statement.setDate(6, new Date(task.getDeadLine().getTime()));
             statement.setDate(7, new Date(task.getCreateAt().getTime()));
-            statement.setDate(8, new Date(task.getUptadeAt().getTime()));
+            statement.setDate(8, new Date(task.getUpdateAt().getTime()));
             statement.setInt(9, task.getId());
             statement.execute();
         } catch (Exception ex) {
@@ -127,7 +127,7 @@ public class TaskControler {
                 task.setStatusTask(resultSet.getBoolean("statusTask"));
                 task.setDeadLine(resultSet.getDate("deadLine"));
                 task.setCreateAt(resultSet.getDate("createAt"));
-                task.setUptadeAt(resultSet.getDate("uptadeAt"));
+                task.setUpdateAt(resultSet.getDate("uptadeAt"));
 
                 tasks.add(task);
 

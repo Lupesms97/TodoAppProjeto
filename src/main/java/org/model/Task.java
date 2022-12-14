@@ -85,11 +85,11 @@ public class Task {
         this.deadLine = deadLine;
     }
 
-    public Date getUptadeAt() {
+    public Date getUpdateAt() {
         return uptadeAt;
     }
 
-    public void setUptadeAt(Date uptadeAt) {
+    public void setUpdateAt(Date uptadeAt) {
         this.uptadeAt = uptadeAt;
     }
 
