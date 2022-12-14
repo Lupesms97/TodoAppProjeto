@@ -56,7 +56,8 @@ public class TaskControler {
 
         Connection conn = null;
         PreparedStatement statement = null;
-
+        // BLOCO DE BAIXO ESTABELECE A CONEXÃO COM O BANCO DE DADOS
+        //E SETA A TROCA DOS VALORES PARA EVITAR SELF INJECTION
         try {
             conn = ConnectionFactory.getConnection();
             statement = conn.prepareStatement(sql);
@@ -68,6 +69,7 @@ public class TaskControler {
             statement.setDate(6, new Date(task.getDeadLine().getTime()));
             statement.setDate(7, new Date(task.getCreateAt().getTime()));
             statement.setDate(8, new Date(task.getUptadeAt().getTime()));
+            statement.setInt(9, task.getId());
             statement.execute();
         } catch (Exception ex) {
             throw new RuntimeException("Erro ao autalizar o banco de dados"+ ex.getMessage(), ex);
@@ -110,7 +112,9 @@ public class TaskControler {
         try {
             conn = ConnectionFactory.getConnection();
             statement = conn.prepareStatement(sql);
+            //SETANDO O VALOR QUE VAI SER USADO PARA FAZER O FILTRO DE BUSCA
             statement.setInt(1, idProject);
+            //RETORNANDO O VALOR DA QUERY(LISTA DE TAREFAS)
             resultSet = statement.executeQuery();
 
             while(resultSet.next()){
