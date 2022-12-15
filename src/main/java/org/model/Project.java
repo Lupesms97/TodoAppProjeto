@@ -1,6 +1,6 @@
 package org.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Project {
     private int id;
@@ -19,6 +19,8 @@ public class Project {
     }
 
     public Project() {
+        this.createAt = new Date();
+        this.updateAt = new Date();
 
     }
 

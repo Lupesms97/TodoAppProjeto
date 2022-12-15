@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bef5023b-978a-41e0-bebe-6e253d208642" name="Changes" comment="REFATORANDO OS GETS E SET DE UPDATE">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/play/Main.java" afterDir="false" />
+    <list default="true" id="bef5023b-978a-41e0-bebe-6e253d208642" name="Changes" comment="é necesario refatorar a data">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/Util/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Util/ConnectionFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/controler/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/controler/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/controler/TaskControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/controler/TaskControler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/controler/TaskControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/controler/TaskController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/model/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/model/Project.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/model/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/play/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/play/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671033936996</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="é necesario refatorar a data">
+      <created>1671044548836</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1671044548836</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -277,7 +282,8 @@
     <MESSAGE value="adicionando controlador que vai retornar lista e que carrega essta lista" />
     <MESSAGE value="COMENTANDO CODDIGO" />
     <MESSAGE value="REFATORANDO OS GETS E SET DE UPDATE" />
-    <option name="LAST_COMMIT_MESSAGE" value="REFATORANDO OS GETS E SET DE UPDATE" />
+    <MESSAGE value="é necesario refatorar a data" />
+    <option name="LAST_COMMIT_MESSAGE" value="é necesario refatorar a data" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -288,5 +294,10 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/TodoAppProjeto$Main.ic" NAME="Main Coverage Results" MODIFIED="1671045351826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.play.*</FILTER>
+    </SUITE>
   </component>
 </project>

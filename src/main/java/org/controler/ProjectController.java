@@ -14,10 +14,11 @@ import java.util.List;
 public class ProjectController {
 
     public static void save(Project project) throws RuntimeException {
-        String sql = "INSERT INTO projects (name," +
+        String sql = "INSERT INTO `projects` (name," +
                 "description," +
                 "createAt," +
-                "UpdateAt VALUES(?, ?, ?, ?)";
+                "UpdateAt)" +
+                "VALUES(?, ?, ?, ?)";
 
         Connection conn = null;
         PreparedStatement statement = null;
@@ -43,12 +44,14 @@ public class ProjectController {
 
     public static void update(Project project){
 
-        String sql = "UPDATE projects SET(name=?," +
-        "description=?," +
-        "createAt=?," +
-        "UpdateAt=? WHERE id=?";
+        String sql = "UPDATE `projects` SET "+
+        "name=?, " +
+        "description=?, " +
+        "createAt=?, " +
+        "UpdateAt=? "+
+        "WHERE id=?";
 
-        Connection conn= null;
+        Connection conn = null;
         PreparedStatement statement = null;
 
         try {
@@ -68,7 +71,7 @@ public class ProjectController {
     }
 
     public void removeById(int idProject){
-        String sql = "DELETE FROM projects WHERE id=?";
+        String sql = "DELETE FROM `projects` WHERE id=?";
 
         Connection conn = null;
         PreparedStatement statement = null;
@@ -90,7 +93,7 @@ public class ProjectController {
 
     public List<Project> getAll(){
 
-        String sql = "SELECT * FROM projects";
+        String sql = "SELECT * FROM `projects`";
 
         Connection conn = null;
         PreparedStatement statement = null;

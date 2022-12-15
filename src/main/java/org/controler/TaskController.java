@@ -8,17 +8,19 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TaskControler {
+public class TaskController {
 
-    public void save(Task task){
-        String sql = "INSERT INTO task (idProject," +
-                "name," +
-                "description," +
-                "statusTask," +
-                "notes," +
-                "deadLine," +
-                "createAt," +
-                "updateAt) VALUES (?,?,?,?,?,?,?,?)";
+    public static void save(Task task){
+        String sql = "INSERT INTO `task`"+
+               "(idProject, " +
+                "name, " +
+                "description, " +
+                "statusTask, " +
+                "notes, " +
+                "deadLine, " +
+                "createAt, " +
+                "updateAt)" +
+                "VALUES (?,?,?,?,?,?,?,?)";
 
         Connection conn = null;
         PreparedStatement statement = null;
@@ -45,15 +47,17 @@ public class TaskControler {
 
     }
 
-    public void update(Task task){
-        String sql = "UPDATE task SET(idProject," +
+    public static void update(Task task){
+        String sql = "UPDATE task SET "+
+                "idProject=?," +
                 "name = ?," +
                 "description= ?," +
                 "statusTask= ?," +
                 "notes= ?," +
                 "deadLine= ?," +
                 "createAt = ?," +
-                "updateAt= ? WHERE id = ?";
+                "updateAt= ?"+
+                "WHERE id = ?";
 
         Connection conn = null;
         PreparedStatement statement = null;
