@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bef5023b-978a-41e0-bebe-6e253d208642" name="Changes" comment="criando tela de cadastro principal" />
+    <list default="true" id="bef5023b-978a-41e0-bebe-6e253d208642" name="Changes" comment="criando tela de cadastro de tarefas e de projetos" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -261,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671132616900</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="criando tela de cadastro de tarefas e de projetos">
+      <created>1671207533667</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1671207533667</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -297,7 +304,8 @@
     <MESSAGE value="é necesario refatorar a data" />
     <MESSAGE value="resolvendo o problema do retono vazio do do createAt, updateAt e do deeadLine" />
     <MESSAGE value="criando tela de cadastro principal" />
-    <option name="LAST_COMMIT_MESSAGE" value="criando tela de cadastro principal" />
+    <MESSAGE value="criando tela de cadastro de tarefas e de projetos" />
+    <option name="LAST_COMMIT_MESSAGE" value="criando tela de cadastro de tarefas e de projetos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

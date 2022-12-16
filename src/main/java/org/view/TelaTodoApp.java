@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package org.view;
-
+import java.awt.Color;
+import java.awt.Font;
 /**
  *
  * @author lupes
@@ -15,6 +16,7 @@ public class TelaTodoApp extends javax.swing.JFrame {
 	 */
 	public TelaTodoApp() {
 		initComponents();
+		decorateTableTask();
 	}
 
 	/**
@@ -26,6 +28,10 @@ public class TelaTodoApp extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
         private void initComponents() {
 
+                PainelListaVazia = new javax.swing.JPanel();
+                txtPainelListaVaziaStatus = new javax.swing.JLabel();
+                PainelListaVaziaIcon = new javax.swing.JLabel();
+                PainelListaVaziaOrientacao = new javax.swing.JLabel();
                 painelPrincipal = new javax.swing.JPanel();
                 tituloPP = new javax.swing.JLabel();
                 sloganPP = new javax.swing.JLabel();
@@ -41,10 +47,34 @@ public class TelaTodoApp extends javax.swing.JFrame {
                 jScrollPane1 = new javax.swing.JScrollPane();
                 jList1 = new javax.swing.JList<>();
                 PainelListaVaziaBase = new javax.swing.JPanel();
-                PainelListaVazia = new javax.swing.JPanel();
-                txtPainelListaVaziaStatus = new javax.swing.JLabel();
-                PainelListaVaziaIcon = new javax.swing.JLabel();
-                PainelListaVaziaOrientacao = new javax.swing.JLabel();
+                jScrollPane2 = new javax.swing.JScrollPane();
+                JTableTask = new javax.swing.JTable();
+
+                PainelListaVazia.setBackground(new java.awt.Color(255, 255, 255));
+
+                javax.swing.GroupLayout PainelListaVaziaLayout = new javax.swing.GroupLayout(PainelListaVazia);
+                PainelListaVazia.setLayout(PainelListaVaziaLayout);
+                PainelListaVaziaLayout.setHorizontalGroup(
+                        PainelListaVaziaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 456, Short.MAX_VALUE)
+                );
+                PainelListaVaziaLayout.setVerticalGroup(
+                        PainelListaVaziaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 227, Short.MAX_VALUE)
+                );
+
+                txtPainelListaVaziaStatus.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+                txtPainelListaVaziaStatus.setForeground(new java.awt.Color(153, 153, 255));
+                txtPainelListaVaziaStatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                txtPainelListaVaziaStatus.setText("Nenhuma tarefa por aqui");
+                txtPainelListaVaziaStatus.setToolTipText("");
+
+                PainelListaVaziaIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                PainelListaVaziaIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-clipboard-96.png"))); // NOI18N
+
+                PainelListaVaziaOrientacao.setForeground(new java.awt.Color(153, 153, 153));
+                PainelListaVaziaOrientacao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                PainelListaVaziaOrientacao.setText("Clique no botão mais para adicionar um nova tarefa");
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
                 setMinimumSize(new java.awt.Dimension(700, 800));
@@ -203,54 +233,48 @@ public class TelaTodoApp extends javax.swing.JFrame {
                 PainelListaVaziaBase.setBackground(new java.awt.Color(255, 255, 255));
                 PainelListaVaziaBase.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-                PainelListaVazia.setBackground(new java.awt.Color(255, 255, 255));
+                JTableTask.setModel(new javax.swing.table.DefaultTableModel(
+                        new Object [][] {
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null}
+                        },
+                        new String [] {
+                                "Nome", "Descrição", "Praze", "Concluido"
+                        }
+                ) {
+                        Class[] types = new Class [] {
+                                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
+                        };
+                        boolean[] canEdit = new boolean [] {
+                                false, false, false, true
+                        };
 
-                txtPainelListaVaziaStatus.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-                txtPainelListaVaziaStatus.setForeground(new java.awt.Color(153, 153, 255));
-                txtPainelListaVaziaStatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                txtPainelListaVaziaStatus.setText("Nenhuma tarefa por aqui");
-                txtPainelListaVaziaStatus.setToolTipText("");
+                        public Class getColumnClass(int columnIndex) {
+                                return types [columnIndex];
+                        }
 
-                PainelListaVaziaIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                PainelListaVaziaIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-clipboard-96.png"))); // NOI18N
-
-                javax.swing.GroupLayout PainelListaVaziaLayout = new javax.swing.GroupLayout(PainelListaVazia);
-                PainelListaVazia.setLayout(PainelListaVaziaLayout);
-                PainelListaVaziaLayout.setHorizontalGroup(
-                        PainelListaVaziaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(PainelListaVaziaIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtPainelListaVaziaStatus, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                );
-                PainelListaVaziaLayout.setVerticalGroup(
-                        PainelListaVaziaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(PainelListaVaziaLayout.createSequentialGroup()
-                                .addComponent(PainelListaVaziaIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtPainelListaVaziaStatus)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                );
-
-                PainelListaVaziaOrientacao.setForeground(new java.awt.Color(153, 153, 153));
-                PainelListaVaziaOrientacao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                PainelListaVaziaOrientacao.setText("Clique no botão mais para adicionar um nova tarefa");
+                        public boolean isCellEditable(int rowIndex, int columnIndex) {
+                                return canEdit [columnIndex];
+                        }
+                });
+                JTableTask.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+                JTableTask.setGridColor(new java.awt.Color(255, 255, 255));
+                JTableTask.setSelectionBackground(new java.awt.Color(153, 153, 255));
+                JTableTask.setSelectionForeground(new java.awt.Color(153, 51, 255));
+                JTableTask.setShowHorizontalLines(true);
+                jScrollPane2.setViewportView(JTableTask);
 
                 javax.swing.GroupLayout PainelListaVaziaBaseLayout = new javax.swing.GroupLayout(PainelListaVaziaBase);
                 PainelListaVaziaBase.setLayout(PainelListaVaziaBaseLayout);
                 PainelListaVaziaBaseLayout.setHorizontalGroup(
                         PainelListaVaziaBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(PainelListaVaziaBaseLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(PainelListaVazia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addContainerGap())
-                        .addComponent(PainelListaVaziaOrientacao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
                 );
                 PainelListaVaziaBaseLayout.setVerticalGroup(
                         PainelListaVaziaBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(PainelListaVaziaBaseLayout.createSequentialGroup()
-                                .addComponent(PainelListaVazia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(6, 6, 6)
-                                .addComponent(PainelListaVaziaOrientacao)
-                                .addContainerGap(133, Short.MAX_VALUE))
+                        .addComponent(jScrollPane2)
                 );
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -301,7 +325,7 @@ public class TelaTodoApp extends javax.swing.JFrame {
 		 */
 		try {
 			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-				if ("Nimbus".equals(info.getName())) {
+				if ("Java swing".equals(info.getName())) {
 					javax.swing.UIManager.setLookAndFeel(info.getClassName());
 					break;
 				}
@@ -326,6 +350,7 @@ public class TelaTodoApp extends javax.swing.JFrame {
 	}
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
+        private javax.swing.JTable JTableTask;
         private javax.swing.JPanel PainelListaVazia;
         private javax.swing.JPanel PainelListaVaziaBase;
         private javax.swing.JLabel PainelListaVaziaIcon;
@@ -335,6 +360,7 @@ public class TelaTodoApp extends javax.swing.JFrame {
         private javax.swing.JLabel iconePainelProjeto;
         private javax.swing.JList<String> jList1;
         private javax.swing.JScrollPane jScrollPane1;
+        private javax.swing.JScrollPane jScrollPane2;
         private javax.swing.JPanel painelLista;
         private javax.swing.JPanel painelListaBase;
         private javax.swing.JPanel painelPrincipal;
@@ -346,4 +372,17 @@ public class TelaTodoApp extends javax.swing.JFrame {
         private javax.swing.JLabel txtPainelProjetos;
         private javax.swing.JLabel txtPainelTarefas;
         // End of variables declaration//GEN-END:variables
+
+	/**
+	 *
+	 */
+public void decorateTableTask(){
+	
+	
+	JTableTask.getTableHeader().setFont(new Font("Serge UI", Font.BOLD, 14));
+	JTableTask.getTableHeader().setBackground(new Color(153, 153, 255));
+	JTableTask.getTableHeader().setForeground(new Color(153, 51,255 ));
+	
+	JTableTask.setAutoCreateRowSorter(true);
+}
 }
