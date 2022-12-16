@@ -108,21 +108,20 @@ public class TelaTodoApp extends javax.swing.JFrame {
                         .addGroup(painelProjetoLayout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(txtPainelProjetos)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                                 .addComponent(iconePainelProjeto)
-                                .addContainerGap(33, Short.MAX_VALUE))
+                                .addContainerGap())
                 );
                 painelProjetoLayout.setVerticalGroup(
                         painelProjetoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(painelProjetoLayout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(painelProjetoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelProjetoLayout.createSequentialGroup()
-                                                .addComponent(iconePainelProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addContainerGap())
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelProjetoLayout.createSequentialGroup()
-                                                .addComponent(txtPainelProjetos, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(15, 15, 15))))
+                                .addComponent(txtPainelProjetos, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(15, 15, 15))
+                        .addGroup(painelProjetoLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(iconePainelProjeto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 );
 
                 painelTarefa.setBackground(new java.awt.Color(255, 255, 255));
