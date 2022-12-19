@@ -259,8 +259,8 @@ public class TelaTodoApp extends javax.swing.JFrame {
                                 return canEdit [columnIndex];
                         }
                 });
-                JTableTask.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
                 JTableTask.setGridColor(new java.awt.Color(255, 255, 255));
+                JTableTask.setRowHeight(50);
                 JTableTask.setSelectionBackground(new java.awt.Color(153, 153, 255));
                 JTableTask.setSelectionForeground(new java.awt.Color(153, 51, 255));
                 JTableTask.setShowHorizontalLines(true);

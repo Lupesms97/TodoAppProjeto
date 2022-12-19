@@ -1,7 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
- */
+
+
+
+
 package org.view;
 
 import javax.swing.JOptionPane;
@@ -18,7 +18,7 @@ public class TelaCadatroProjetosJDiolog extends javax.swing.JDialog {
 	public TelaCadatroProjetosJDiolog(java.awt.Frame parent, boolean modal) {
 		super(parent, modal);
 		initComponents();
-        controller = new ProjectController();
+        	controller = new ProjectController();
 	}
 
 	/**
@@ -156,10 +156,12 @@ public class TelaCadatroProjetosJDiolog extends javax.swing.JDialog {
 			project.setDescription(txtEspacoparaDescricaoJDialog.getText());
 			JOptionPane.showMessageDialog(rootPane, "Projeto Salvo com sucesso");
 		
-			ProjectController.save(project);
-		} catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, e.getMessage());
-        }
+			controller.save(project);
+		} catch (RuntimeException e) {
+            		JOptionPane.showMessageDialog(rootPane, e.getMessage());}
+        
+		
+		this.dispose();
         }//GEN-LAST:event_IconJDialogMouseClicked
 
 	/**
