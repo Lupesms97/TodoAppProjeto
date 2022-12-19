@@ -4,18 +4,21 @@
  */
 package org.view;
 
+import javax.swing.JOptionPane;
+import org.controler.ProjectController;
+import org.model.Project;
+
 /**
  *
  * @author lupes
  */
 public class TelaCadatroProjetosJDiolog extends javax.swing.JDialog {
 
-	/**
-	 * Creates new form TelaCadatroProjetosJDiolog
-	 */
+	ProjectController controller;
 	public TelaCadatroProjetosJDiolog(java.awt.Frame parent, boolean modal) {
 		super(parent, modal);
 		initComponents();
+        controller = new ProjectController();
 	}
 
 	/**
@@ -35,7 +38,7 @@ public class TelaCadatroProjetosJDiolog extends javax.swing.JDialog {
                 txtEspacoParadigitarnomeJDialog = new javax.swing.JTextField();
                 jLabel4 = new javax.swing.JLabel();
                 jScrollPane1 = new javax.swing.JScrollPane();
-                txtDescriçãoJDialog = new javax.swing.JTextArea();
+                txtEspacoparaDescricaoJDialog = new javax.swing.JTextArea();
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
                 setMinimumSize(new java.awt.Dimension(475, 415));
@@ -47,7 +50,13 @@ public class TelaCadatroProjetosJDiolog extends javax.swing.JDialog {
                 txtTituloJDialog.setForeground(new java.awt.Color(255, 255, 255));
                 txtTituloJDialog.setText("Projetos");
 
+                IconJDialog.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                 IconJDialog.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/check.png"))); // NOI18N
+                IconJDialog.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                IconJDialogMouseClicked(evt);
+                        }
+                });
 
                 javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
                 jPanel1.setLayout(jPanel1Layout);
@@ -57,17 +66,20 @@ public class TelaCadatroProjetosJDiolog extends javax.swing.JDialog {
                                 .addContainerGap()
                                 .addComponent(txtTituloJDialog)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(IconJDialog)
+                                .addComponent(IconJDialog, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(25, 25, 25))
                 );
                 jPanel1Layout.setVerticalGroup(
                         jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(txtTituloJDialog)
-                                        .addComponent(IconJDialog))
-                                .addContainerGap(33, Short.MAX_VALUE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(30, 30, 30)
+                                                .addComponent(txtTituloJDialog))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(19, 19, 19)
+                                                .addComponent(IconJDialog, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap(22, Short.MAX_VALUE))
                 );
 
                 txtNomeJDialog.setText("Nome");
@@ -77,11 +89,11 @@ public class TelaCadatroProjetosJDiolog extends javax.swing.JDialog {
 
                 jLabel4.setText("Descrição");
 
-                txtDescriçãoJDialog.setColumns(20);
-                txtDescriçãoJDialog.setRows(5);
-                txtDescriçãoJDialog.setToolTipText("Digite a descrição do projeo aqui");
-                txtDescriçãoJDialog.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-                jScrollPane1.setViewportView(txtDescriçãoJDialog);
+                txtEspacoparaDescricaoJDialog.setColumns(20);
+                txtEspacoparaDescricaoJDialog.setRows(5);
+                txtEspacoparaDescricaoJDialog.setToolTipText("Digite a descrição do projeo aqui");
+                txtEspacoparaDescricaoJDialog.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+                jScrollPane1.setViewportView(txtEspacoparaDescricaoJDialog);
 
                 javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
                 jPanel2.setLayout(jPanel2Layout);
@@ -134,6 +146,22 @@ public class TelaCadatroProjetosJDiolog extends javax.swing.JDialog {
                 pack();
         }// </editor-fold>//GEN-END:initComponents
 
+        private void IconJDialogMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconJDialogMouseClicked
+                
+		Project project = new Project();
+		
+
+		try{		
+			project.setName(txtEspacoParadigitarnomeJDialog.getText());
+			project.setDescription(txtEspacoparaDescricaoJDialog.getText());
+			JOptionPane.showMessageDialog(rootPane, "Projeto Salvo com sucesso");
+		
+			ProjectController.save(project);
+		} catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, e.getMessage());
+        }
+        }//GEN-LAST:event_IconJDialogMouseClicked
+
 	/**
 	 * @param args the command line arguments
 	 */
@@ -182,8 +210,8 @@ public class TelaCadatroProjetosJDiolog extends javax.swing.JDialog {
         private javax.swing.JPanel jPanel1;
         private javax.swing.JPanel jPanel2;
         private javax.swing.JScrollPane jScrollPane1;
-        private javax.swing.JTextArea txtDescriçãoJDialog;
         private javax.swing.JTextField txtEspacoParadigitarnomeJDialog;
+        private javax.swing.JTextArea txtEspacoparaDescricaoJDialog;
         private javax.swing.JLabel txtNomeJDialog;
         private javax.swing.JLabel txtTituloJDialog;
         // End of variables declaration//GEN-END:variables
