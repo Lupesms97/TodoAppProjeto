@@ -4,6 +4,8 @@
  */
 package org.view;
 
+import org.controler.TaskController;
+
 /**
  *
  * @author lupes
@@ -13,9 +15,12 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
 	/**
 	 * Creates new form TelaCadastroTarefasJDialog
 	 */
+    TaskController task;
 	public TelaCadastroTarefasJDialog(java.awt.Frame parent, boolean modal) {
 		super(parent, modal);
 		initComponents();
+
+        task = new TaskController();
 	}
 
 	/**
@@ -31,19 +36,19 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
                 jLabel4 = new javax.swing.JLabel();
                 jLabel5 = new javax.swing.JLabel();
                 jPanel2 = new javax.swing.JPanel();
-                txtNometarefasJDialog = new javax.swing.JLabel();
-                CampoParaEscreverNometarefasJDialog = new javax.swing.JTextField();
+                txtNomeTiutuloTarefasDialogo = new javax.swing.JLabel();
+                txtrNomeTarefasJDialog = new javax.swing.JTextField();
                 jLabel2 = new javax.swing.JLabel();
                 jScrollPane1 = new javax.swing.JScrollPane();
                 jTextArea1 = new javax.swing.JTextArea();
                 jLabel3 = new javax.swing.JLabel();
                 jScrollPane2 = new javax.swing.JScrollPane();
-                jTextArea2 = new javax.swing.JTextArea();
+                txtDescriçãoTarefasDialogo = new javax.swing.JTextArea();
                 jLabel6 = new javax.swing.JLabel();
-                jTextField2 = new javax.swing.JTextField();
                 jLabel7 = new javax.swing.JLabel();
                 jScrollPane3 = new javax.swing.JScrollPane();
-                jTextArea3 = new javax.swing.JTextArea();
+                txtNotasTarefasDialogo = new javax.swing.JTextArea();
+                txtDataTaarafeasDiialog = new javax.swing.JFormattedTextField();
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
                 setMinimumSize(new java.awt.Dimension(475, 600));
@@ -56,6 +61,7 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
                 jLabel4.setForeground(new java.awt.Color(255, 255, 255));
                 jLabel4.setText("Tarefas");
 
+                jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                 jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/check.png"))); // NOI18N
 
                 javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -66,22 +72,25 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
                                 .addContainerGap()
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel5)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(25, 25, 25))
                 );
                 jPanel1Layout.setVerticalGroup(
                         jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(38, 38, 38)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel5)
-                                        .addComponent(jLabel4))
-                                .addContainerGap(41, Short.MAX_VALUE))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(38, 38, 38)
+                                                .addComponent(jLabel4))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(14, 14, 14)
+                                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap(35, Short.MAX_VALUE))
                 );
 
-                txtNometarefasJDialog.setText("Nome");
+                txtNomeTiutuloTarefasDialogo.setText("Nome");
 
-                CampoParaEscreverNometarefasJDialog.setToolTipText("Escreva o nome  da tarefa");
+                txtrNomeTarefasJDialog.setToolTipText("Escreva o nome  da tarefa");
 
                 jLabel2.setText("Descrição");
 
@@ -89,21 +98,27 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
                 jTextArea1.setRows(5);
                 jScrollPane1.setViewportView(jTextArea1);
 
-                jTextArea2.setColumns(20);
-                jTextArea2.setRows(5);
-                jTextArea2.setToolTipText("Escreva a descrição da tarefa ");
-                jScrollPane2.setViewportView(jTextArea2);
+                txtDescriçãoTarefasDialogo.setColumns(20);
+                txtDescriçãoTarefasDialogo.setRows(5);
+                txtDescriçãoTarefasDialogo.setToolTipText("Escreva a descrição da tarefa ");
+                jScrollPane2.setViewportView(txtDescriçãoTarefasDialogo);
 
                 jLabel6.setText("Prazo");
 
-                jTextField2.setToolTipText("Digite o prazo para arealização da tarefa");
-
                 jLabel7.setText("Notas");
 
-                jTextArea3.setColumns(20);
-                jTextArea3.setRows(5);
-                jTextArea3.setToolTipText("Alguma nota que deseja adicionar ?");
-                jScrollPane3.setViewportView(jTextArea3);
+                txtNotasTarefasDialogo.setColumns(20);
+                txtNotasTarefasDialogo.setRows(5);
+                txtNotasTarefasDialogo.setToolTipText("Alguma nota que deseja adicionar ?");
+                jScrollPane3.setViewportView(txtNotasTarefasDialogo);
+
+                txtDataTaarafeasDiialog.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+                txtDataTaarafeasDiialog.setToolTipText("");
+                txtDataTaarafeasDiialog.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                txtDataTaarafeasDiialogActionPerformed(evt);
+                        }
+                });
 
                 javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
                 jPanel2.setLayout(jPanel2Layout);
@@ -113,22 +128,22 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
                                 .addContainerGap()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE)
-                                        .addComponent(CampoParaEscreverNometarefasJDialog, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtNometarefasJDialog, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txtrNomeTarefasJDialog, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtNomeTiutuloTarefasDialogo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addContainerGap())
+                        .addComponent(txtDataTaarafeasDiialog)
                 );
                 jPanel2Layout.setVerticalGroup(
                         jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(16, 16, 16)
-                                .addComponent(txtNometarefasJDialog)
+                                .addComponent(txtNomeTiutuloTarefasDialogo)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CampoParaEscreverNometarefasJDialog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtrNomeTarefasJDialog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(30, 30, 30)
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -136,7 +151,7 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
                                 .addGap(30, 30, 30)
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtDataTaarafeasDiialog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(30, 30, 30)
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -167,6 +182,10 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
 
                 pack();
         }// </editor-fold>//GEN-END:initComponents
+
+        private void txtDataTaarafeasDiialogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataTaarafeasDiialogActionPerformed
+                // TODO add your handling code here:
+        }//GEN-LAST:event_txtDataTaarafeasDiialogActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -211,7 +230,6 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
 	}
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
-        private javax.swing.JTextField CampoParaEscreverNometarefasJDialog;
         private javax.swing.JLabel jLabel2;
         private javax.swing.JLabel jLabel3;
         private javax.swing.JLabel jLabel4;
@@ -224,9 +242,10 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
         private javax.swing.JScrollPane jScrollPane2;
         private javax.swing.JScrollPane jScrollPane3;
         private javax.swing.JTextArea jTextArea1;
-        private javax.swing.JTextArea jTextArea2;
-        private javax.swing.JTextArea jTextArea3;
-        private javax.swing.JTextField jTextField2;
-        private javax.swing.JLabel txtNometarefasJDialog;
+        private javax.swing.JFormattedTextField txtDataTaarafeasDiialog;
+        private javax.swing.JTextArea txtDescriçãoTarefasDialogo;
+        private javax.swing.JLabel txtNomeTiutuloTarefasDialogo;
+        private javax.swing.JTextArea txtNotasTarefasDialogo;
+        private javax.swing.JTextField txtrNomeTarefasJDialog;
         // End of variables declaration//GEN-END:variables
 }

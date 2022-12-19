@@ -18,7 +18,8 @@ public class TelaCadatroProjetosJDiolog extends javax.swing.JDialog {
 	public TelaCadatroProjetosJDiolog(java.awt.Frame parent, boolean modal) {
 		super(parent, modal);
 		initComponents();
-        	controller = new ProjectController();
+
+        controller = new ProjectController();
 	}
 
 	/**
