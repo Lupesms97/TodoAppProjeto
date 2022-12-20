@@ -158,7 +158,7 @@ public class TelaCadastroProjetosJDiolog extends javax.swing.JDialog {
 		
 			controller.save(project);
 		} catch (RuntimeException e) {
-            		JOptionPane.showMessageDialog(rootPane, e.getMessage());}
+            JOptionPane.showMessageDialog(rootPane, e.getMessage());}
         
 		
 		this.dispose();

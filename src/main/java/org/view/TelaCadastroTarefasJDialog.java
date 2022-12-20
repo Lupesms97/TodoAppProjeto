@@ -51,7 +51,7 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
                 jTextArea1 = new javax.swing.JTextArea();
                 jLabel3 = new javax.swing.JLabel();
                 jScrollPane2 = new javax.swing.JScrollPane();
-                txtDescriçãoTarefasDialogo = new javax.swing.JTextArea();
+                txtDescricaoTarefasDialogo = new javax.swing.JTextArea();
                 jLabel6 = new javax.swing.JLabel();
                 jLabel7 = new javax.swing.JLabel();
                 jScrollPane3 = new javax.swing.JScrollPane();
@@ -110,10 +110,10 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
                 jTextArea1.setRows(5);
                 jScrollPane1.setViewportView(jTextArea1);
 
-                txtDescriçãoTarefasDialogo.setColumns(20);
-                txtDescriçãoTarefasDialogo.setRows(5);
-                txtDescriçãoTarefasDialogo.setToolTipText("Escreva a descrição da tarefa ");
-                jScrollPane2.setViewportView(txtDescriçãoTarefasDialogo);
+                txtDescricaoTarefasDialogo.setColumns(20);
+                txtDescricaoTarefasDialogo.setRows(5);
+                txtDescricaoTarefasDialogo.setToolTipText("Escreva a descrição da tarefa ");
+                jScrollPane2.setViewportView(txtDescricaoTarefasDialogo);
 
                 jLabel6.setText("Prazo");
 
@@ -207,13 +207,15 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
 
                     task.setIdProject(project.getId());
                     task.setName(txtrNomeTarefasJDialog.getText());
-                    task.setDescription(txtDescriçãoTarefasDialogo.getText());
+                    task.setDescription(txtDescricaoTarefasDialogo.getText());
                     task.setNotes(txtNotasTarefasDialogo.getText());
+                    task.setStatusTask(false);
 
                     SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
                     Date deadLine = null;
                     deadLine   = dateFormat.parse(txtDataTaarafeasDiialog.getText());
                     task.setDeadLine(deadLine);
+
 
                     controller.save(task);
                     JOptionPane.showMessageDialog(rootPane, "Sua tarefa foi salva com sucesso");
@@ -280,7 +282,7 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
         private javax.swing.JTextArea jTextArea1;
         private javax.swing.JLabel mouseClikedTeladeTarefa;
         private javax.swing.JFormattedTextField txtDataTaarafeasDiialog;
-        private javax.swing.JTextArea txtDescriçãoTarefasDialogo;
+        private javax.swing.JTextArea txtDescricaoTarefasDialogo;
         private javax.swing.JLabel txtNomeTiutuloTarefasDialogo;
         private javax.swing.JTextArea txtNotasTarefasDialogo;
         private javax.swing.JTextField txtrNomeTarefasJDialog;

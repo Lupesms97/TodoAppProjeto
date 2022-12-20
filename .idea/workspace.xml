@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bef5023b-978a-41e0-bebe-6e253d208642" name="Changes" comment="iniciando implementação das tarefa">
+    <list default="true" id="bef5023b-978a-41e0-bebe-6e253d208642" name="Changes" comment="coorgindo a janela que não iniciava ao clicar no botão de projetos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/view/TelaCadastroProjetosJDiolog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/view/TelaCadastroProjetosJDiolog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/view/TelaCadastroTarefasJDialog.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/view/TelaCadastroTarefasJDialog.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/view/TelaCadastroTarefasJDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/view/TelaCadastroTarefasJDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/view/TelaCadatroProjetosJDiolog.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/view/TelaCadastroProjetosJDiolog.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/view/TelaCadatroProjetosJDiolog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/view/TelaCadastroProjetosJDiolog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/view/TelaTodoApp.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/view/TelaTodoApp.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/view/TelaTodoApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/view/TelaTodoApp.java" afterDir="false" />
     </list>
@@ -69,21 +69,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\lupes\OneDrive\Área de Trabalho\StartByCapgmini\TodoAppProjeto\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TelaCadatroProjetosJDiolog">
+  <component name="RunManager" selected="Application.TelaTodoApp">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.play.Main" />
       <module name="TodoAppProjeto.main" />
@@ -97,8 +98,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TelaCadastroTarefasJDialog" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.view.TelaCadastroTarefasJDialog" />
+    <configuration name="TelaCadastroProjetosJDiolog" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.view.TelaCadastroProjetosJDiolog" />
       <module name="TodoAppProjeto.main" />
       <extension name="coverage">
         <pattern>
@@ -110,8 +111,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TelaCadatroProjetosJDiolog" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.view.TelaCadatroProjetosJDiolog" />
+    <configuration name="TelaCadastroTarefasJDialog" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.view.TelaCadastroTarefasJDialog" />
       <module name="TodoAppProjeto.main" />
       <extension name="coverage">
         <pattern>
@@ -159,8 +160,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TelaCadastroProjetosJDiolog" />
         <item itemvalue="Application.TelaCadastroTarefasJDialog" />
-        <item itemvalue="Application.TelaCadatroProjetosJDiolog" />
         <item itemvalue="Application.TelaTodoApp" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Gradle.TodoAppProjeto [dependencies]" />
@@ -330,7 +331,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671550916823</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="coorgindo a janela que não iniciava ao clicar no botão de projetos">
+      <created>1671552482637</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1671552482637</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -370,7 +378,8 @@
     <MESSAGE value="implementando mudanças manuais" />
     <MESSAGE value="tela de cadastro de projetos finalizada" />
     <MESSAGE value="iniciando implementação das tarefa" />
-    <option name="LAST_COMMIT_MESSAGE" value="iniciando implementação das tarefa" />
+    <MESSAGE value="coorgindo a janela que não iniciava ao clicar no botão de projetos" />
+    <option name="LAST_COMMIT_MESSAGE" value="coorgindo a janela que não iniciava ao clicar no botão de projetos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

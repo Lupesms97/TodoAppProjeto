@@ -167,6 +167,11 @@ public class TelaTodoApp extends javax.swing.JFrame {
                 txtPainelTarefas.setText("Tarefas");
 
                 iconPainelTarefas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-plus-48.png"))); // NOI18N
+                iconPainelTarefas.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                iconPainelTarefasMouseClicked(evt);
+                        }
+                });
 
                 javax.swing.GroupLayout painelTarefaLayout = new javax.swing.GroupLayout(painelTarefa);
                 painelTarefa.setLayout(painelTarefaLayout);
@@ -320,9 +325,16 @@ public class TelaTodoApp extends javax.swing.JFrame {
         }// </editor-fold>//GEN-END:initComponents
 
         private void iconePainelProjetoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconePainelProjetoMouseClicked
-            TelaCadastroProjetosJDiolog telaCadastro = new TelaCadastroProjetosJDiolog(this, rootPaneCheckingEnabled);
-            telaCadastro.setVisible(true);
+            TelaCadastroProjetosJDiolog telaCadastroProjeto = new TelaCadastroProjetosJDiolog(this, rootPaneCheckingEnabled);
+            telaCadastroProjeto.setVisible(true);
         }//GEN-LAST:event_iconePainelProjetoMouseClicked
+
+        private void iconPainelTarefasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconPainelTarefasMouseClicked
+            TelaCadastroTarefasJDialog telaCadastroTarefas = new TelaCadastroTarefasJDialog(this, rootPaneCheckingEnabled);
+            telaCadastroTarefas.setProject(null);
+            telaCadastroTarefas.setVisible(true);
+
+        }//GEN-LAST:event_iconPainelTarefasMouseClicked
 
 	/**
 	 * @param args the command line arguments
