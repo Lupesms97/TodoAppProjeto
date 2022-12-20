@@ -130,6 +130,11 @@ public class TelaTodoApp extends javax.swing.JFrame {
                 txtPainelProjetos.setText("Projetos");
 
                 iconePainelProjeto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-plus-48.png"))); // NOI18N
+                iconePainelProjeto.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                iconePainelProjetoMouseClicked(evt);
+                        }
+                });
 
                 javax.swing.GroupLayout painelProjetoLayout = new javax.swing.GroupLayout(painelProjeto);
                 painelProjeto.setLayout(painelProjetoLayout);
@@ -313,6 +318,11 @@ public class TelaTodoApp extends javax.swing.JFrame {
 
                 pack();
         }// </editor-fold>//GEN-END:initComponents
+
+        private void iconePainelProjetoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconePainelProjetoMouseClicked
+            TelaCadastroProjetosJDiolog telaCadastro = new TelaCadastroProjetosJDiolog(this, rootPaneCheckingEnabled);
+            telaCadastro.setVisible(true);
+        }//GEN-LAST:event_iconePainelProjetoMouseClicked
 
 	/**
 	 * @param args the command line arguments

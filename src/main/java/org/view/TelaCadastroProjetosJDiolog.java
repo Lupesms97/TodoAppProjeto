@@ -12,10 +12,10 @@ import org.model.Project;
  *
  * @author lupes
  */
-public class TelaCadatroProjetosJDiolog extends javax.swing.JDialog {
+public class TelaCadastroProjetosJDiolog extends javax.swing.JDialog {
 
 	ProjectController controller;
-	public TelaCadatroProjetosJDiolog(java.awt.Frame parent, boolean modal) {
+	public TelaCadastroProjetosJDiolog(java.awt.Frame parent, boolean modal) {
 		super(parent, modal);
 		initComponents();
 
@@ -43,7 +43,6 @@ public class TelaCadatroProjetosJDiolog extends javax.swing.JDialog {
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
                 setMinimumSize(new java.awt.Dimension(475, 415));
-                setPreferredSize(new java.awt.Dimension(475, 415));
 
                 jPanel1.setBackground(new java.awt.Color(153, 153, 255));
 
@@ -176,26 +175,27 @@ public class TelaCadatroProjetosJDiolog extends javax.swing.JDialog {
 		 */
 		try {
 			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-				if ("Nimbus".equals(info.getName())) {
+				if ("Java swing".equals(info.getName())) {
 					javax.swing.UIManager.setLookAndFeel(info.getClassName());
 					break;
 				}
 			}
 		} catch (ClassNotFoundException ex) {
-			java.util.logging.Logger.getLogger(TelaCadatroProjetosJDiolog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+			java.util.logging.Logger.getLogger(TelaCadastroProjetosJDiolog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (InstantiationException ex) {
-			java.util.logging.Logger.getLogger(TelaCadatroProjetosJDiolog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+			java.util.logging.Logger.getLogger(TelaCadastroProjetosJDiolog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (IllegalAccessException ex) {
-			java.util.logging.Logger.getLogger(TelaCadatroProjetosJDiolog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+			java.util.logging.Logger.getLogger(TelaCadastroProjetosJDiolog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-			java.util.logging.Logger.getLogger(TelaCadatroProjetosJDiolog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+			java.util.logging.Logger.getLogger(TelaCadastroProjetosJDiolog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		}
+		//</editor-fold>
 		//</editor-fold>
 
 		/* Create and display the dialog */
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				TelaCadatroProjetosJDiolog dialog = new TelaCadatroProjetosJDiolog(new javax.swing.JFrame(), true);
+				TelaCadastroProjetosJDiolog dialog = new TelaCadastroProjetosJDiolog(new javax.swing.JFrame(), true);
 				dialog.addWindowListener(new java.awt.event.WindowAdapter() {
 					@Override
 					public void windowClosing(java.awt.event.WindowEvent e) {
