@@ -5,6 +5,12 @@
 package org.view;
 
 import org.controler.TaskController;
+import org.model.Project;
+import org.model.Task;
+
+import javax.swing.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
@@ -15,12 +21,14 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
 	/**
 	 * Creates new form TelaCadastroTarefasJDialog
 	 */
-    TaskController task;
+        TaskController controller;
+        Project project;
 	public TelaCadastroTarefasJDialog(java.awt.Frame parent, boolean modal) {
 		super(parent, modal);
 		initComponents();
 
-        task = new TaskController();
+        controller = new TaskController();
+        project = new Project();
 	}
 
 	/**
@@ -34,7 +42,7 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
 
                 jPanel1 = new javax.swing.JPanel();
                 jLabel4 = new javax.swing.JLabel();
-                jLabel5 = new javax.swing.JLabel();
+                mouseClikedTeladeTarefa = new javax.swing.JLabel();
                 jPanel2 = new javax.swing.JPanel();
                 txtNomeTiutuloTarefasDialogo = new javax.swing.JLabel();
                 txtrNomeTarefasJDialog = new javax.swing.JTextField();
@@ -52,7 +60,6 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
                 setMinimumSize(new java.awt.Dimension(475, 600));
-                setPreferredSize(new java.awt.Dimension(475, 600));
 
                 jPanel1.setBackground(new java.awt.Color(153, 153, 255));
                 jPanel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -61,8 +68,13 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
                 jLabel4.setForeground(new java.awt.Color(255, 255, 255));
                 jLabel4.setText("Tarefas");
 
-                jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/check.png"))); // NOI18N
+                mouseClikedTeladeTarefa.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                mouseClikedTeladeTarefa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/check.png"))); // NOI18N
+                mouseClikedTeladeTarefa.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                mouseClikedTeladeTarefaMouseClicked(evt);
+                        }
+                });
 
                 javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
                 jPanel1.setLayout(jPanel1Layout);
@@ -72,7 +84,7 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
                                 .addContainerGap()
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(mouseClikedTeladeTarefa, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(25, 25, 25))
                 );
                 jPanel1Layout.setVerticalGroup(
@@ -84,7 +96,7 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
                                                 .addComponent(jLabel4))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGap(14, 14, 14)
-                                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(mouseClikedTeladeTarefa, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addContainerGap(35, Short.MAX_VALUE))
                 );
 
@@ -187,6 +199,31 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
                 // TODO add your handling code here:
         }//GEN-LAST:event_txtDataTaarafeasDiialogActionPerformed
 
+        private void mouseClikedTeladeTarefaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mouseClikedTeladeTarefaMouseClicked
+
+
+                try {
+                    Task task = new Task();
+
+                    task.setIdProject(project.getId());
+                    task.setName(txtrNomeTarefasJDialog.getText());
+                    task.setDescription(txtDescriçãoTarefasDialogo.getText());
+                    task.setNotes(txtNotasTarefasDialogo.getText());
+
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                    Date deadLine = null;
+                    deadLine   = dateFormat.parse(txtDataTaarafeasDiialog.getText());
+                    task.setDeadLine(deadLine);
+
+                    controller.save(task);
+                    JOptionPane.showMessageDialog(rootPane, "Sua tarefa foi salva com sucesso");
+
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(rootPane, e.getMessage());
+                }this.dispose();
+
+        }//GEN-LAST:event_mouseClikedTeladeTarefaMouseClicked
+
 	/**
 	 * @param args the command line arguments
 	 */
@@ -233,7 +270,6 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
         private javax.swing.JLabel jLabel2;
         private javax.swing.JLabel jLabel3;
         private javax.swing.JLabel jLabel4;
-        private javax.swing.JLabel jLabel5;
         private javax.swing.JLabel jLabel6;
         private javax.swing.JLabel jLabel7;
         private javax.swing.JPanel jPanel1;
@@ -242,10 +278,16 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
         private javax.swing.JScrollPane jScrollPane2;
         private javax.swing.JScrollPane jScrollPane3;
         private javax.swing.JTextArea jTextArea1;
+        private javax.swing.JLabel mouseClikedTeladeTarefa;
         private javax.swing.JFormattedTextField txtDataTaarafeasDiialog;
         private javax.swing.JTextArea txtDescriçãoTarefasDialogo;
         private javax.swing.JLabel txtNomeTiutuloTarefasDialogo;
         private javax.swing.JTextArea txtNotasTarefasDialogo;
         private javax.swing.JTextField txtrNomeTarefasJDialog;
         // End of variables declaration//GEN-END:variables
+
+
+    public void setProject(Project project) {
+        this.project = project;
+    }
 }
