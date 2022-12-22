@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bef5023b-978a-41e0-bebe-6e253d208642" name="Changes" comment="impleentações completas da tela de tarefas" />
+    <list default="true" id="bef5023b-978a-41e0-bebe-6e253d208642" name="Changes" comment="implementando classe tablemodel modelo para lista">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/Util/TaskTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Util/TaskTableModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/controller/ProjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/controller/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/model/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/view/TelaTodoApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/view/TelaTodoApp.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -163,11 +170,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TodoAppProjeto [dependencies]" />
         <item itemvalue="Application.TelaTodoApp" />
         <item itemvalue="Application.TelaCadastroProjetosJDiolog" />
         <item itemvalue="Application.TelaCadastroTarefasJDialog" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Gradle.TodoAppProjeto [dependencies]" />
       </list>
     </recent_temporary>
   </component>
@@ -355,7 +362,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671723305932</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="impleentações completas da tela de tarefas">
+      <created>1671732851575</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1671732851575</updated>
+    </task>
+    <task id="LOCAL-00027" summary="implementando classe tablemodel modelo para lista">
+      <created>1671734090111</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1671734090111</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -397,7 +418,8 @@
     <MESSAGE value="iniciando implementação das tarefa" />
     <MESSAGE value="coorgindo a janela que não iniciava ao clicar no botão de projetos" />
     <MESSAGE value="impleentações completas da tela de tarefas" />
-    <option name="LAST_COMMIT_MESSAGE" value="impleentações completas da tela de tarefas" />
+    <MESSAGE value="implementando classe tablemodel modelo para lista" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementando classe tablemodel modelo para lista" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -405,6 +427,10 @@
         <breakpoint suspend="THREAD" type="java-exception">
           <properties class="java.lang.RuntimeException" package="java.lang" />
           <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="2" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
