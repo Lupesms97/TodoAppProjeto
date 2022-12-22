@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bef5023b-978a-41e0-bebe-6e253d208642" name="Changes" comment="impleentações completas da tela de tarefas">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/controler/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/controller/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/controler/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/controller/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/model/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/model/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/play/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/play/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/view/TelaCadastroProjetosJDiolog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/view/TelaCadastroProjetosJDiolog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/view/TelaCadastroTarefasJDialog.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/view/TelaCadastroTarefasJDialog.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/view/TelaCadastroTarefasJDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/view/TelaCadastroTarefasJDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/view/TelaTodoApp.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/view/TelaTodoApp.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/view/TelaTodoApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/view/TelaTodoApp.java" afterDir="false" />
-    </list>
+    <list default="true" id="bef5023b-978a-41e0-bebe-6e253d208642" name="Changes" comment="impleentações completas da tela de tarefas" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -359,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671559068310</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="impleentações completas da tela de tarefas">
+      <created>1671723305932</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1671723305932</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
