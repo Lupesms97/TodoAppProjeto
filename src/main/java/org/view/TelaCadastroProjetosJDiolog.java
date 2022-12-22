@@ -5,7 +5,7 @@
 package org.view;
 
 import javax.swing.JOptionPane;
-import org.controler.ProjectController;
+import org.controller.ProjectController;
 import org.model.Project;
 
 /**
@@ -91,7 +91,7 @@ public class TelaCadastroProjetosJDiolog extends javax.swing.JDialog {
 
                 txtEspacoparaDescricaoJDialog.setColumns(20);
                 txtEspacoparaDescricaoJDialog.setRows(5);
-                txtEspacoparaDescricaoJDialog.setToolTipText("Digite a descrição do projeo aqui");
+                txtEspacoparaDescricaoJDialog.setToolTipText("Digite a descrição do projeto aqui");
                 txtEspacoparaDescricaoJDialog.setBorder(javax.swing.BorderFactory.createEtchedBorder());
                 jScrollPane1.setViewportView(txtEspacoparaDescricaoJDialog);
 

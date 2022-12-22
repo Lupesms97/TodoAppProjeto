@@ -1,4 +1,4 @@
-package org.controler;
+package org.controller;
 
 import org.Util.ConnectionFactory;
 import org.model.Project;

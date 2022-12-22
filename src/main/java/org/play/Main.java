@@ -1,8 +1,7 @@
 package org.play;
 import java.lang.*;
-import org.controler.ProjectController;
-
-import org.controler.TaskController;
+import org.controller.ProjectController;
+import org.controller.TaskController;
 import org.model.Project;
 import org.model.Task;
 

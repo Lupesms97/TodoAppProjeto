@@ -3,20 +3,33 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package org.view;
+import org.controller.ProjectController;
+import org.controller.TaskController;
+import org.model.Project;
+
+import javax.swing.*;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.List;
+
 /**
  *
  * @author lupes
  */
 public class TelaTodoApp extends javax.swing.JFrame {
 
-	/**
-	 * Creates new form TelaTodoApp
-	 */
+    ProjectController projectController;
+    TaskController taskController;
+    DefaultListModel projectModel;
+
 	public TelaTodoApp() {
 		initComponents();
 		decorateTableTask();
+        initComponentsModel();
+        initDataController();
+
 	}
 
 	/**
@@ -45,7 +58,7 @@ public class TelaTodoApp extends javax.swing.JFrame {
                 painelListaBase = new javax.swing.JPanel();
                 painelLista = new javax.swing.JPanel();
                 jScrollPane1 = new javax.swing.JScrollPane();
-                jList1 = new javax.swing.JList<>();
+                jListProject = new javax.swing.JList<>();
                 PainelListaVaziaBase = new javax.swing.JPanel();
                 jScrollPane2 = new javax.swing.JScrollPane();
                 JTableTask = new javax.swing.JTable();
@@ -143,7 +156,7 @@ public class TelaTodoApp extends javax.swing.JFrame {
                         .addGroup(painelProjetoLayout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(txtPainelProjetos)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(iconePainelProjeto)
                                 .addContainerGap())
                 );
@@ -200,23 +213,20 @@ public class TelaTodoApp extends javax.swing.JFrame {
 
                 painelLista.setBackground(new java.awt.Color(255, 255, 255));
 
-                jList1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-                jList1.setModel(new javax.swing.AbstractListModel<String>() {
-                        String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-                        public int getSize() { return strings.length; }
-                        public String getElementAt(int i) { return strings[i]; }
-                });
-                jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-                jList1.setFixedCellHeight(50);
-                jList1.setSelectionBackground(new java.awt.Color(153, 153, 255));
-                jList1.setSelectionForeground(new java.awt.Color(153, 51, 255));
-                jScrollPane1.setViewportView(jList1);
+                jListProject.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+                jListProject.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+                jListProject.setFixedCellHeight(50);
+                jListProject.setSelectionBackground(new java.awt.Color(153, 153, 255));
+                jListProject.setSelectionForeground(new java.awt.Color(153, 51, 255));
+                jScrollPane1.setViewportView(jListProject);
 
                 javax.swing.GroupLayout painelListaLayout = new javax.swing.GroupLayout(painelLista);
                 painelLista.setLayout(painelListaLayout);
                 painelListaLayout.setHorizontalGroup(
                         painelListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane1)
+                        .addGroup(painelListaLayout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
                 );
                 painelListaLayout.setVerticalGroup(
                         painelListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -229,8 +239,8 @@ public class TelaTodoApp extends javax.swing.JFrame {
                         painelListaBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(painelListaBaseLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(painelLista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addContainerGap())
+                                .addComponent(painelLista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 );
                 painelListaBaseLayout.setVerticalGroup(
                         painelListaBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -280,7 +290,7 @@ public class TelaTodoApp extends javax.swing.JFrame {
                 PainelListaVaziaBase.setLayout(PainelListaVaziaBaseLayout);
                 PainelListaVaziaBaseLayout.setHorizontalGroup(
                         PainelListaVaziaBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
                 );
                 PainelListaVaziaBaseLayout.setVerticalGroup(
                         PainelListaVaziaBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -327,6 +337,12 @@ public class TelaTodoApp extends javax.swing.JFrame {
         private void iconePainelProjetoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconePainelProjetoMouseClicked
             TelaCadastroProjetosJDiolog telaCadastroProjeto = new TelaCadastroProjetosJDiolog(this, rootPaneCheckingEnabled);
             telaCadastroProjeto.setVisible(true);
+
+            telaCadastroProjeto.addWindowListener(new WindowAdapter() {
+                public void windowClosed(WindowEvent e) {
+                    loadProjects();
+                }
+            });
         }//GEN-LAST:event_iconePainelProjetoMouseClicked
 
         private void iconPainelTarefasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconPainelTarefasMouseClicked
@@ -380,7 +396,7 @@ public class TelaTodoApp extends javax.swing.JFrame {
         private javax.swing.JLabel iconPainelTarefas;
         private javax.swing.JLabel iconePP;
         private javax.swing.JLabel iconePainelProjeto;
-        private javax.swing.JList<String> jList1;
+        private javax.swing.JList<String> jListProject;
         private javax.swing.JScrollPane jScrollPane1;
         private javax.swing.JScrollPane jScrollPane2;
         private javax.swing.JPanel painelLista;
@@ -398,13 +414,53 @@ public class TelaTodoApp extends javax.swing.JFrame {
 	/**
 	 *
 	 */
-public void decorateTableTask(){
+    public void decorateTableTask(){
 	
 	
-	JTableTask.getTableHeader().setFont(new Font("Serge UI", Font.BOLD, 14));
-	JTableTask.getTableHeader().setBackground(new Color(153, 153, 255));
-	JTableTask.getTableHeader().setForeground(new Color(153, 51,255 ));
-	
-	JTableTask.setAutoCreateRowSorter(true);
-}
+        JTableTask.getTableHeader().setFont(new Font("Serge UI", Font.BOLD, 14));
+        JTableTask.getTableHeader().setBackground(new Color(153, 153, 255));
+        JTableTask.getTableHeader().setForeground(new Color(153, 51,255 ));
+
+        JTableTask.setAutoCreateRowSorter(true);
+    }
+
+    public void initDataController(){
+        projectController = new ProjectController();
+        taskController = new TaskController();
+
+
+    }
+
+    public void initComponentsModel(){
+        projectModel = new DefaultListModel();
+        loadProjects();
+    }
+
+    public void loadProjects(){
+        List<Project> projects = projectController.getAll();
+
+        projectModel.clear();
+
+        int sizeFinal = projects.size() - 1;
+
+        for (int i = 0; i < sizeFinal; i++) {
+            Project project = projects.get(i);
+            projectModel.addElement(project);
+
+	   
+        }
+        jListProject.setModel(projectModel);
+        
+
+
+
+    }
+
+
+
+
+
+
+
+
 }

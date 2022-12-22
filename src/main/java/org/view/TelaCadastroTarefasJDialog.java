@@ -4,7 +4,7 @@
  */
 package org.view;
 
-import org.controler.TaskController;
+import org.controller.TaskController;
 import org.model.Project;
 import org.model.Task;
 
@@ -104,7 +104,7 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
 
                 txtrNomeTarefasJDialog.setToolTipText("Escreva o nome  da tarefa");
 
-                jLabel2.setText("Descrição");
+                jLabel2.setText("Descriçãoo");
 
                 jTextArea1.setColumns(20);
                 jTextArea1.setRows(5);
@@ -124,7 +124,7 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
                 txtNotasTarefasDialogo.setToolTipText("Alguma nota que deseja adicionar ?");
                 jScrollPane3.setViewportView(txtNotasTarefasDialogo);
 
-                txtDataTaarafeasDiialog.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+                txtDataTaarafeasDiialog.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
                 txtDataTaarafeasDiialog.setToolTipText("");
                 txtDataTaarafeasDiialog.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,18 +136,20 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
                 jPanel2.setLayout(jPanel2Layout);
                 jPanel2Layout.setHorizontalGroup(
                         jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE)
-                                        .addComponent(txtrNomeTarefasJDialog, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtNomeTiutuloTarefasDialogo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addContainerGap())
-                        .addComponent(txtDataTaarafeasDiialog)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE)
+                                                        .addComponent(txtrNomeTarefasJDialog, javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(txtNomeTiutuloTarefasDialogo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addContainerGap())
+                                        .addComponent(txtDataTaarafeasDiialog, javax.swing.GroupLayout.Alignment.TRAILING)))
                 );
                 jPanel2Layout.setVerticalGroup(
                         jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,6 +208,7 @@ public class TelaCadastroTarefasJDialog extends javax.swing.JDialog {
                     Task task = new Task();
 
                     task.setIdProject(project.getId());
+
                     task.setName(txtrNomeTarefasJDialog.getText());
                     task.setDescription(txtDescricaoTarefasDialogo.getText());
                     task.setNotes(txtNotasTarefasDialogo.getText());
