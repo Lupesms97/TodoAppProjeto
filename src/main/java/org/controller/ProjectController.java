@@ -99,7 +99,7 @@ public class ProjectController {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
 
-        List<Project> projects = new ArrayList<Project>();
+        List<Project> projects = new ArrayList<>();
 
         try {
             conn = ConnectionFactory.getConnection();
