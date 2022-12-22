@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package org.view;
+import org.Util.TaskTableModel;
 import org.controller.ProjectController;
 import org.controller.TaskController;
 import org.model.Project;
@@ -22,7 +23,9 @@ public class TelaTodoApp extends javax.swing.JFrame {
 
     ProjectController projectController;
     TaskController taskController;
-    DefaultListModel projectModel;
+    DefaultListModel projectsModel;
+
+    TaskTableModel tasksModel;
 
 	public TelaTodoApp() {
 		initComponents();
@@ -432,24 +435,27 @@ public class TelaTodoApp extends javax.swing.JFrame {
     }
 
     public void initComponentsModel(){
-        projectModel = new DefaultListModel();
+        projectsModel = new DefaultListModel();
         loadProjects();
+
+        tasksModel = new TaskTableModel();
+        J
     }
 
     public void loadProjects(){
         List<Project> projects = projectController.getAll();
 
-        projectModel.clear();
+        projectsModel.clear();
 
         int sizeFinal = projects.size() - 1;
 
         for (int i = 0; i < sizeFinal; i++) {
             Project project = projects.get(i);
-            projectModel.addElement(project);
+            projectsModel.addElement(project);
 
 	   
         }
-        jListProject.setModel(projectModel);
+        jListProject.setModel(projectsModel);
         
 
 
