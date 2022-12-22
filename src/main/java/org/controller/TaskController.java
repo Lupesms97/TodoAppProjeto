@@ -103,7 +103,7 @@ public class TaskController {
 
     }
 
-    public List<Task> getAll(int idProject){
+    public static List<Task> getAll(int idProject){
 
         String sql = "SELECT * FROM task WHERE idProject=?";
 
