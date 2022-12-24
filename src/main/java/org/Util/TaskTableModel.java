@@ -3,11 +3,12 @@ package org.Util;
 import org.model.Task;
 
 import javax.swing.table.AbstractTableModel;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TaskTableModel extends AbstractTableModel {
-    String[] columns = {"Nome", "Dedscrição", "Prazo", "Tarefa concluída", "Editar", "Excluir"};
+    String[] columns = {"Nome", "Descrição", "Prazo", "Tarefa concluída", "Editar", "Excluir"};
     List<Task> tasks = new ArrayList<>();
 
     @Override
@@ -21,24 +22,28 @@ public class TaskTableModel extends AbstractTableModel {
     }
 
     @Override
+    public String getColumnName(int columnIndex){
+        return columns[columnIndex];
+    }
+
+    @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        switch (columnIndex){
-            case 1:
+        switch (columnIndex) {
+            case 0 :
                 return tasks.get(rowIndex).getName();
-            case 2:
+            case 1 :
                 return tasks.get(rowIndex).getDescription();
-            case 3:
-                return tasks.get(rowIndex).getDeadLine();
-            case 4:
+            case 2 :
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                return dateFormat.format(tasks.get(rowIndex).getDeadLine());
+            case 3 :
                 return tasks.get(rowIndex).isStatusTask();
-            case 5:
-                return  "";
-            case 6:
-                return  "";
-            default:
-                return "Dados não encontrados";
-
-
+            case 4 :
+                return "";
+            case 5 :
+                return "";
+            default :
+                return"Dados não encontrados";
         }
     }
 
