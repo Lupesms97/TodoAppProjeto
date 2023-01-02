@@ -343,31 +343,96 @@ public class TelaTodoApp extends javax.swing.JFrame {
 
                 pack();
         }// </editor-fold>//GEN-END:initComponents
+    private void jLabelProjectsAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelProjectsAddMouseClicked
+        // TODO add your handling code here:
+        TelaCadastroProjetosJDiolog projectDialogScreen = new TelaCadastroProjetosJDiolog(this, true);
+        projectDialogScreen.setVisible(true);
 
-        private void iconePainelProjetoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconePainelProjetoMouseClicked
-            TelaCadastroProjetosJDiolog telaCadastroProjeto = new TelaCadastroProjetosJDiolog(this, rootPaneCheckingEnabled);
-            telaCadastroProjeto.setVisible(true);
+        projectDialogScreen.addWindowListener(new WindowAdapter(){
+            public void windowClosed(WindowEvent e) {
+                loadProjects();
+            }
 
-            telaCadastroProjeto.addWindowListener(new WindowAdapter() {
-                public void windowClosed(WindowEvent e) {
-                    loadProjects();
-                }
-            });
-        }//GEN-LAST:event_iconePainelProjetoMouseClicked
+        });
 
-        private void iconPainelTarefasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconPainelTarefasMouseClicked
-            TelaCadastroTarefasJDialog telaCadastroTarefas = new TelaCadastroTarefasJDialog(this, rootPaneCheckingEnabled);
-            telaCadastroTarefas.setProject(null);
-            telaCadastroTarefas.setVisible(true);
 
-//            telaCadastroTarefas.addWindowListener(new WindowAdapter() {
-//                @Override
+    }//GEN-LAST:event_jLabelProjectsAddMouseClicked
+
+    private void jLabelTasksAddKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabelTasksAddKeyTyped
+        // TODO add your handling code here:
+
+         taskDialogScreen = new TaskDialogoScreen(this, true);
+
+        int projectIndex = jListProjects.getSelectedIndex();
+        Project project = (Project) projectModel.get(projectIndex);
+        taskDialogScreen.setProject(project);
+
+        taskDialogScreen.setVisible(true);
+
+        taskDialogScreen.addWindowListener(new WindowAdapter(){
+
+            public void windowClosed(WindowEvent e) {
+
+                int projectIndex = jListProjects.getSelectedIndex();
+                Project project = (Project) projectModel.get(projectIndex);
+                loadTasks(project.getId());
+
+            }
+
+        });
+
+    }//GEN-LAST:event_jLabelTasksAddKeyTyped
+
+    private void jTableTasksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableTasksMouseClicked
+        // TODO add your handling code here:
+
+        int rowIndex = jTableTasks.rowAtPoint(evt.getPoint());
+        int columnIndex = jTableTasks.columnAtPoint(evt.getPoint());
+
+        Task task = taskModel.getTasks().get(rowIndex);
+
+        switch(columnIndex){
+            case 3:
+                taskController.update(task);
+                break;
+            case 4:
+
+                break;
+            case 5:
+                taskController.removeById(task.getId());
+                taskModel.getTasks().remove(task);
+
+                int projectIndex = jListProjects.getSelectedIndex();
+                Project project = (Project) projectModel.get(projectIndex);
+                loadTasks(project.getId());
+
+                break;
+        }
+
+//        private void iconePainelProjetoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconePainelProjetoMouseClicked
+//            TelaCadastroProjetosJDiolog telaCadastroProjeto = new TelaCadastroProjetosJDiolog(this, rootPaneCheckingEnabled);
+//            telaCadastroProjeto.setVisible(true);
+//
+//            telaCadastroProjeto.addWindowListener(new WindowAdapter() {
 //                public void windowClosed(WindowEvent e) {
-//                    loadTasks();
+//                    loadProjects();
 //                }
 //            });
+//        }//GEN-LAST:event_iconePainelProjetoMouseClicked
+//
+//        private void iconPainelTarefasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconPainelTarefasMouseClicked
+//            TelaCadastroTarefasJDialog telaCadastroTarefas = new TelaCadastroTarefasJDialog(this, rootPaneCheckingEnabled);
+//            telaCadastroTarefas.setProject(null);
+//            telaCadastroTarefas.setVisible(true);
+//
+////            telaCadastroTarefas.addWindowListener(new WindowAdapter() {
+////                @Override
+////                public void windowClosed(WindowEvent e) {
+////                    loadTasks();
+////                }
+////            });
 
-        }//GEN-LAST:event_iconPainelTarefasMouseClicked
+//        }//GEN-LAST:event_iconPainelTarefasMouseClicked
 
 	/**
 	 * @param args the command line arguments
